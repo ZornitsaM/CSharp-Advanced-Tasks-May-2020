@@ -1,0 +1,193 @@
+﻿using System;
+using System.Linq;
+using System.Text;
+using System.Collections.Generic;
+
+namespace _10._Radioactive_Mutant_Vampire_Bunnies
+{
+    class Program
+    {
+        static char[,] matrix;
+        static int playerRow;
+        static int playerCol;
+        static bool isDead;
+        static void Main(string[] args)
+        {
+            isDead = false;
+            var dimensions = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int totalRows = dimensions[0];
+            int totalCols = dimensions[1];
+            matrix = new char[totalRows, totalCols];
+            
+            PopulateMatrix();
+            var directions = Console.ReadLine().ToCharArray();
+
+            foreach (var direction in directions)
+            {
+                switch (direction)
+                {
+                    case 'U':
+                        Move(-1, 0);
+                        break;
+
+                    case 'L':
+                        Move(0, -1);
+                        break;
+                    case 'D':
+                        Move(+1, 0);
+                        break;
+                    case 'R':
+                        Move(0, +1);
+                        break;
+                    default:
+                        break;
+                }
+
+                Spread();
+
+                if (isDead)
+                {
+                    Print();
+                    Console.WriteLine($"dead: {playerRow} {playerCol}");
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        private static void Spread()
+        {
+            var indexes = new List<int>();
+
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    if (matrix[row, col] == 'B')
+                    {
+                        indexes.Add(row);
+                        indexes.Add(col);
+                    }
+                }
+            }
+
+            for (int i = 0; i < indexes.Count; i += 2)
+            {
+                int bunnyRow = indexes[i];
+                int bunnyCol = indexes[i + 1];
+
+                if (isInside(matrix, bunnyRow, bunnyCol + 1))
+                {
+                    if (matrix[bunnyRow, bunnyCol + 1] == 'P')
+                    {
+                        isDead = true;
+                    }
+
+                    else
+                    {
+                        matrix[bunnyRow, bunnyCol + 1] = 'B';
+                    }
+                }
+
+                if (isInside(matrix, bunnyRow, bunnyCol - 1))
+                {
+                    if (matrix[bunnyRow, bunnyCol - 1] == 'P')
+                    {
+                        isDead = true;
+                    }
+
+                    else
+                    {
+                        matrix[bunnyRow, bunnyCol - 1] = 'B';
+                    }
+                }
+
+                if (isInside(matrix, bunnyRow + 1, bunnyCol))
+                {
+                    if (matrix[bunnyRow + 1, bunnyCol] == 'P')
+                    {
+                        isDead = true;
+                    }
+
+                    else
+                    {
+                        matrix[bunnyRow + 1, bunnyCol] = 'B';
+                    }
+                }
+
+                if (isInside(matrix, bunnyRow - 1, bunnyCol))
+                {
+                    if (matrix[bunnyRow - 1, bunnyCol] == 'P')
+                    {
+                        isDead = true;
+                    }
+
+                    else
+                    {
+                        matrix[bunnyRow - 1, bunnyCol] = 'B';
+                    }
+                }
+            }
+        }
+
+        private static void Move(int row, int col)
+        {
+            if (!isInside(matrix, playerRow + row, playerCol + col))
+            {
+                matrix[playerRow, playerCol] = '.';
+                Spread();
+                Print();
+                Console.WriteLine($"won: {playerRow} {playerCol}");
+                Environment.Exit(0);
+            }
+
+            if (matrix[playerRow + row, playerCol + col] == 'B')
+            {
+                Spread();
+                Print();
+                Console.WriteLine($"dead: {playerRow + row} {playerCol + col}");
+                Environment.Exit(0);
+            }
+
+            matrix[playerRow, playerCol] = '.';
+            playerRow += row;
+            playerCol += col;
+            matrix[playerRow + row, playerCol + col] = 'P';
+        }
+
+        private static void Print()
+        {
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    Console.Write(matrix[row, col]);
+                }
+                Console.WriteLine();
+            }
+        }
+
+        private static void PopulateMatrix()
+        {
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                var input = Console.ReadLine().ToCharArray();
+
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    matrix[row, col] = input[col];
+                    if (matrix[row, col] == 'P')
+                    {
+                        playerRow = row;
+                        playerCol = col;
+
+                    }
+                }
+            }
+        }
+
+        private static bool isInside(char[,] matrix, int row, int col)
+        {
+            return row >= 0 && row < matrix.GetLength(0) && col >= 0 && col < matrix.GetLength(1);
+        }
+    }
+}
