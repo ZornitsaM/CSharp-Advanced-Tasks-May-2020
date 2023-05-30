@@ -27,7 +27,6 @@ class Stack<T> : IEnumerable<T>
         {
             throw new InvalidOperationException("No elements");
         }
-
         currentIndex--;
     }
 
