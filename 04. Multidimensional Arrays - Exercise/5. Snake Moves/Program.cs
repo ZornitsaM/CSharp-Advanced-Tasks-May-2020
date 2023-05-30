@@ -10,10 +10,8 @@ namespace _5._Snake_Moves
         static void Main(string[] args)
         {
             var dimensions = Console.ReadLine().Split().Select(int.Parse).ToArray();
-
             int rows = dimensions[0];
             int columns = dimensions[1];
-
             var matrix = new char[rows, columns];
             string input = Console.ReadLine();
 
@@ -30,7 +28,6 @@ namespace _5._Snake_Moves
                         queue.Enqueue(current);
                     }
                 }
-
                 else
                 {
                     for (int col = 0; col < columns; col++)
@@ -49,9 +46,7 @@ namespace _5._Snake_Moves
                 {
                     Console.Write(matrix[row, col]);
                 }
-
                 Console.WriteLine();
-
             }
         }
     }

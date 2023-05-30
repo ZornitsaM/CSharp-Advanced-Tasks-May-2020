@@ -9,22 +9,21 @@ namespace _5._Count_Symbols
         static void Main(string[] args)
         {
             var input = Console.ReadLine().ToCharArray();
-            var dic = new Dictionary<char, int>();
+            var dictionary = new Dictionary<char, int>();
 
             for (int i = 0; i < input.Length; i++)
             {
-                if (!dic.ContainsKey(input[i]))
+                if (!dictionary.ContainsKey(input[i]))
                 {
-                    dic[input[i]] = 1;
+                    dictionary[input[i]] = 1;
                 }
-
                 else
                 {
-                    dic[input[i]] += 1;
+                    dictionary[input[i]] += 1;
                 }
             }
 
-            var sortedDic = dic.OrderBy(x => x.Key).ToArray();
+            var sortedDic = dictionary.OrderBy(x => x.Key).ToArray();
 
             foreach (var item in sortedDic)
             {

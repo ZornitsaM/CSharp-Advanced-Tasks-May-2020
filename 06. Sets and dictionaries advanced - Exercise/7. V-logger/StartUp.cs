@@ -9,7 +9,6 @@ namespace DEMO
         static void Main(string[] args)
         {
             var vLogger = new Dictionary<string, Dictionary<string, HashSet<string>>>();
-
             string command = Console.ReadLine();
 
             while (command != "Statistics")
@@ -27,7 +26,6 @@ namespace DEMO
                         vLogger[userName].Add("followers", new HashSet<string>());
                     }
                 }
-
                 else if (inputInfo[1] == "followed")
                 {
                     string mainUser = inputInfo[2];
@@ -43,14 +41,11 @@ namespace DEMO
                         command = Console.ReadLine();
                         continue;
                     }
-
                     vLogger[mainUser]["followers"].Add(follower);
                     vLogger[follower]["followed"].Add(mainUser);
                 }
-
                 command = Console.ReadLine();
             }
-
 
             Console.WriteLine($"The V-Logger has a total of {vLogger.Count} vloggers in its logs.");
             var sortedVLoggers = vLogger
@@ -73,7 +68,6 @@ namespace DEMO
                         Console.WriteLine($"*  {item}");
                     }
                 }
-
                 counter++;
             }
         }

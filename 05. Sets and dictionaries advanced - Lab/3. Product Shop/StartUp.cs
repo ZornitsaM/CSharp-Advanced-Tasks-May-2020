@@ -9,21 +9,19 @@ namespace _3._Product_Shop
         static void Main(string[] args)
         {
             string command = Console.ReadLine();
-
-            var dictionary = new Dictionary<string, Dictionary<string, double>>();
+            var dictionary = new Dictionary<string, Dictionary<string, decimal>>();
 
             while (command != "Revision")
             {
                 var currentCommand = command.Split(", ", StringSplitOptions.RemoveEmptyEntries).ToArray();
                 string mag = currentCommand[0];
                 string product = currentCommand[1];
-                double price = double.Parse(currentCommand[2]);
+                decimal price = decimal.Parse(currentCommand[2]);
 
                 if (!dictionary.ContainsKey(mag))
                 {
                     dictionary[mag] = new Dictionary<string, double>();
                 }
-
                 dictionary[mag].Add(product, price);
                 command = Console.ReadLine();
             }

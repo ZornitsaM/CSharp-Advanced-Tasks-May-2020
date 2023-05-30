@@ -14,7 +14,6 @@ namespace _3._Word_Count
             string wordsPath = "words.txt";
             var textLines = File.ReadAllLines(textPath);
             var words = File.ReadAllLines(wordsPath);
-
             var wordsInfo = new Dictionary<string, int>();
 
             foreach (var word in words)
@@ -23,9 +22,9 @@ namespace _3._Word_Count
                 if (!wordsInfo.ContainsKey(currentWordLower))
                 {
                     wordsInfo.Add(currentWordLower, 0);
-
                 }
             }
+
             foreach (var currentLine in textLines)
             {
                 var currentLineWords = currentLine.ToLower().Split(new char[] { ',', ' ', '-', '!', '?', '.', '\'', ':', ';' });
@@ -51,8 +50,6 @@ namespace _3._Word_Count
             {
                 File.AppendAllText(expectedResultPath, $"{key} - {value}{Environment.NewLine}");
             }
-
-
         }
     }
 }

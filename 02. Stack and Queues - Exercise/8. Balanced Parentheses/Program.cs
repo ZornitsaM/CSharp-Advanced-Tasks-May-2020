@@ -18,7 +18,6 @@ namespace _8._Balanced_Parentheses
                 {
                     stack.Push(c);
                 }
-
                 else
                 {
                     if (stack.Any())
@@ -34,13 +33,11 @@ namespace _8._Balanced_Parentheses
                         {
                             stack.Pop();
                         }
-
                         else if (current == '[' && c == ']')
                         {
                             stack.Pop();
                         }
                     }
-
                     else
                     {
                         stack.Push(c);

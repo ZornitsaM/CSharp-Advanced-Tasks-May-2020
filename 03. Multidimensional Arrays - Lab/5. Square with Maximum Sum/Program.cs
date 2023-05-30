@@ -11,10 +11,8 @@ namespace _5._Square_with_Maximum_Sum
         {
 
             var dimensions = Console.ReadLine().Split(", ").Select(int.Parse).ToArray();
-
             int rows = dimensions[0];
             int columns = dimensions[1];
-
             var matrix = new int[rows, columns];
 
             for (int row = 0; row < rows; row++)
@@ -49,7 +47,6 @@ namespace _5._Square_with_Maximum_Sum
                     }
                 }
             }
-
             Console.WriteLine($"{numberUpLeft} {numberUpRight}");
             Console.WriteLine($"{numberDownLeft} {numberDownRight}");
             Console.WriteLine(maxSum);

@@ -17,7 +17,6 @@ namespace Sets_and_dictionaries_advanced_LAB
                 {
                     filteredNumbers[numbers[i]] = 1;
                 }
-
                 else
                 {
                     filteredNumbers[numbers[i]]++;

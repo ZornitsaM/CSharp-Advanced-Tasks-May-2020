@@ -10,10 +10,8 @@ namespace _5._Directory_Traversal
         static void Main(string[] args)
         {
             var fileArray = Directory.GetFiles(".", "*.*");
-
             var dirInfo = new Dictionary<string, Dictionary<string, double>>();
-            var directoryInfo = new DirectoryInfo("."); //-->настоящата папка, от която стартираме
-
+            var directoryInfo = new DirectoryInfo(".");
             var allFiles = directoryInfo.GetFiles();
 
             foreach (FileInfo currentFile in allFiles)
@@ -26,18 +24,14 @@ namespace _5._Directory_Traversal
                 {
                     dirInfo.Add(extensions, new Dictionary<string, double>());
                 }
-
                 if (!dirInfo[extensions].ContainsKey(fileName))
                 {
                     dirInfo[extensions].Add(fileName, sized);
                 }
 
-
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"/report.txt";
-
                 var sortedDictionary = dirInfo.OrderByDescending(x => x.Value.Count).ThenBy(x => x.Key).ToDictionary(x => x.Key, y => y.Value);
-
-
+                
                 foreach (var (extension, value) in sortedDictionary)
                 {
                     File.AppendAllText(path, extension + Environment.NewLine);
@@ -47,7 +41,6 @@ namespace _5._Directory_Traversal
                         File.AppendAllText(path, ($"--{filename} - {size:f3}kb" + Environment.NewLine));
                     }
                 }
-
             }
         }
     }

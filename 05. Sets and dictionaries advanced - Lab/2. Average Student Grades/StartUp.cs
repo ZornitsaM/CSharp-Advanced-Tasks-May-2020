@@ -22,7 +22,6 @@ namespace _2._Average_Student_Grades
                     dictionary[name] = new List<decimal>();
                     dictionary[name].Add(note);
                 }
-
                 else
                 {
                     dictionary[name].Add(note);

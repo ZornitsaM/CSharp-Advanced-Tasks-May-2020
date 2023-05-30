@@ -33,7 +33,7 @@ namespace _7._Truck_Tour
                     {
                         foundPoint = false;
                     }
-
+                    
                     fuelAmount -= currentPump[1];
                     pumps.Enqueue(currentPump);
                 }
@@ -42,12 +42,9 @@ namespace _7._Truck_Tour
                 {
                     break;
                 }
-
                 cnt++;
-
                 pumps.Enqueue(pumps.Dequeue());
             }
-
             Console.WriteLine(cnt);
         }
     }

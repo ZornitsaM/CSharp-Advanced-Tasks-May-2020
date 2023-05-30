@@ -28,14 +28,12 @@ namespace _6._Wardrobe
                         {
                             dictionary[color][input[j]] += 1;
                         }
-
                         else
                         {
                             dictionary[color][input[j]] = 1;
                         }
                     }
                 }
-
                 else
                 {
                     for (int j = 1; j < input.Length; j++)
@@ -44,7 +42,6 @@ namespace _6._Wardrobe
                         {
                             dictionary[color][input[j]] = 1;
                         }
-
                         else
                         {
                             dictionary[color][input[j]] += 1;
@@ -65,7 +62,6 @@ namespace _6._Wardrobe
                     {
                         Console.WriteLine($"* {current.Key} - {current.Value}(found!)");
                     }
-
                     else
                     {
                         Console.WriteLine($"* {current.Key} - {current.Value}");

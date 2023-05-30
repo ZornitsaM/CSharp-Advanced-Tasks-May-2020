@@ -9,7 +9,6 @@ namespace _4._Cities_by_Continent_and_Country
         static void Main(string[] args)
         {
             int counter = int.Parse(Console.ReadLine());
-
             var dictionary = new Dictionary<string, Dictionary<string, List<string>>>();
 
             for (int i = 0; i < counter; i++)
@@ -23,12 +22,10 @@ namespace _4._Cities_by_Continent_and_Country
                 {
                     dictionary[land] = new Dictionary<string, List<string>>();
                 }
-
                 if (!dictionary[land].ContainsKey(country))
                 {
                     dictionary[land][country] = new List<string>();
                 }
-
                 dictionary[land][country].Add(town);
             }
 

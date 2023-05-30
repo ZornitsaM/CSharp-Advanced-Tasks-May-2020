@@ -8,9 +8,7 @@ namespace DefiningClasses
     {
        static void Main(string[] args)
         {
-            //Family family = new Family();
             List<Person> persons = new List<Person>();
-
             int count = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < count; i++)
@@ -21,22 +19,16 @@ namespace DefiningClasses
 
                 Person person = new Person(name, age);
                 persons.Add(person);
-                
-
             }
 
             var oldestMembers = persons.Where(x => x.Age > 30).OrderBy(x => x.Name).ToList();
-
-
+            
             foreach (var item in oldestMembers)
             {
                 Console.WriteLine($"{item.Name} - {item.Age}");
             }
         }
-
-
     }
-
 }
 
 

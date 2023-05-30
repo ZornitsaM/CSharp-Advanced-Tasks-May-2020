@@ -10,10 +10,8 @@ namespace _3._Maximal_Sum
         static void Main(string[] args)
         {
             var dimensions = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
-
             int rows = dimensions[0];
             int columns = dimensions[1];
-
             int maxRow = 0;
             int maxCol = 0;
             int maxSum = int.MinValue;
@@ -38,7 +36,6 @@ namespace _3._Maximal_Sum
                     }
                 }
             }
-
             Console.WriteLine($"Sum = {maxSum}");
             Console.WriteLine($"{matrix[maxRow,maxCol]} {matrix[maxRow, maxCol+1]} {matrix[maxRow, maxCol+2]}");
             Console.WriteLine($"{matrix[maxRow+1, maxCol]} {matrix[maxRow+1, maxCol + 1]} {matrix[maxRow+1, maxCol + 2]}");

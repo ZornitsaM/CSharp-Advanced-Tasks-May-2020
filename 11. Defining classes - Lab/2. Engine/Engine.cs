@@ -15,6 +15,5 @@ namespace CarManufacturer
             this.HorsePower = horsePower;
             this.CubicCapacity = cubicCapacity;
         }
-
     }
 }

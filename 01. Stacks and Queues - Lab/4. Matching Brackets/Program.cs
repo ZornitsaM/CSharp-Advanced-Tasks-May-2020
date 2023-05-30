@@ -9,7 +9,6 @@ namespace _4._Matching_Brackets
     {
         static void Main(string[] args)
         {
-
             var input = Console.ReadLine();
             var stack = new Stack<int>();
 
@@ -19,7 +18,6 @@ namespace _4._Matching_Brackets
                 {
                     stack.Push(i);
                 }
-
                 else if (input[i]==')')
                 {
                     int startIndex = stack.Pop();

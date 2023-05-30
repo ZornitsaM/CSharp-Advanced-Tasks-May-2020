@@ -11,7 +11,6 @@ namespace DEMO
         {
             var dictionary = new Dictionary<string, int>();
             var sortedDictionary = new Dictionary<string, int>();
-
             int count = int.Parse(Console.ReadLine());
 
             PopulateMatrix(dictionary, count);
@@ -28,19 +27,15 @@ namespace DEMO
                 {
                     PrintNameAndAge(sortedDictionary);
                 }
-
                 else if (commandToPrint[0] == "age")
                 {
                     PrintAge(sortedDictionary);
                 }
-
                 else if (commandToPrint[0] == "name")
                 {
                     PrintName(sortedDictionary);
                 }
-
             }
-
             else if (filterAge == "younger")
             {
                 sortedDictionary = dictionary.Where(x => x.Value < filterNumberAge).ToDictionary(x => x.Key, x => x.Value);
@@ -49,12 +44,10 @@ namespace DEMO
                 {
                     PrintNameAndAge(sortedDictionary);
                 }
-
                 else if (commandToPrint[0] == "age")
                 {
                     PrintAge(sortedDictionary);
                 }
-
                 else if (commandToPrint[0] == "name")
                 {
                     PrintName(sortedDictionary);

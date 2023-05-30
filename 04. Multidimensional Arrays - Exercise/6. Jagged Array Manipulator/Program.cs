@@ -9,9 +9,7 @@ namespace _6._Jagged_Array_Manipulator
     {
         static void Main(string[] args)
         {
-
             byte rows = byte.Parse(Console.ReadLine());
-
             var matrix = new double[rows][];
 
             for (int row = 0; row < rows; row++)
@@ -35,7 +33,6 @@ namespace _6._Jagged_Array_Manipulator
                         matrix[row + 1][next] *= 2;
                     }
                 }
-
                 else
                 {
                     for (int current = 0; current < matrix[row].Length; current++)
@@ -62,7 +59,6 @@ namespace _6._Jagged_Array_Manipulator
                 {
                     matrix[row][col] += value;
                 }
-
                 else if (commandArr[0] == "Subtract" && row >= 0 && row < rows && col >= 0 && col < matrix[row].Length)
                 {
                     matrix[row][col] -= value;

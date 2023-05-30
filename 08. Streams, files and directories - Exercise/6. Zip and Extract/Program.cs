@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.IO.Compression;
+
 namespace Problem_6
 {
     class Program
@@ -10,8 +11,8 @@ namespace Problem_6
         {
             string picFolderPath = ".";
             string targetPath = "../../../result.zip";
-            ZipFile.CreateFromDirectory(picFolderPath, targetPath);
 
+            ZipFile.CreateFromDirectory(picFolderPath, targetPath);
             ZipFile.ExtractToDirectory(targetPath, "../../");
         }
     }

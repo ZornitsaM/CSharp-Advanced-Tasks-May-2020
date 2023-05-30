@@ -29,19 +29,16 @@ namespace Stacks_and_Queues_EX
                 {
                     stack.Pop();
                 }
-
             }
 
-            if (stack.Count==0)
+            if (stack.Count == 0)
             {
                 Console.WriteLine("0");
             }
-
             else if (stack.Contains(checkNumber))
             {
                 Console.WriteLine("true");
             }
-
             else
             {
                 Console.WriteLine(stack.Min());

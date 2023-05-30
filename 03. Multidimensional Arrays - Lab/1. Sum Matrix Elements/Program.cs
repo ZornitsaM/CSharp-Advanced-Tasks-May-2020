@@ -3,7 +3,6 @@ using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 
-
 namespace Multidimensional_Arrays_LAB
 {
     class Program
@@ -11,10 +10,8 @@ namespace Multidimensional_Arrays_LAB
         static void Main(string[] args)
         {
             var input = Console.ReadLine().Split(", ").Select(int.Parse).ToArray();
-
             var rows = input[0];
             var columns = input[1];
-
             var matrix = new int[rows, columns];
             int sumOutput = 0;
 
@@ -29,11 +26,9 @@ namespace Multidimensional_Arrays_LAB
 
                 }
             }
-
             Console.WriteLine(rows);
             Console.WriteLine(columns);
             Console.WriteLine(sumOutput);
-            
         }
     }
 }

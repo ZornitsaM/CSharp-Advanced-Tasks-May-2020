@@ -36,7 +36,6 @@ namespace _5._Fashion_Boutique
                         sumForOneBox = 0;
                     }
                 }
-
                 else
                 {
                     countBox++;

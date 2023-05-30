@@ -92,7 +92,6 @@ namespace _7._Knight_Game
                     matrix[killerRow, killerCol] = '0';
                     knightsCount++;
                 }
-
                 else
                 {
                     Console.WriteLine(knightsCount);

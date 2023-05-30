@@ -23,7 +23,6 @@ namespace _3._Simple_Calculator
                 {
                     sum = finalNumber + secondNumber;
                 }
-
                 else
                 {
                     sum = finalNumber - secondNumber;
@@ -31,7 +30,6 @@ namespace _3._Simple_Calculator
 
                 stack.Push(sum.ToString());
             }
-
             Console.WriteLine(sum);
         }
     }

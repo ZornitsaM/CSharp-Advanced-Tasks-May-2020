@@ -23,6 +23,7 @@ namespace Template
                 });
 
             }
+
             var filter = Console.ReadLine();
             var ageToFilter = int.Parse(Console.ReadLine());
 
@@ -32,26 +33,22 @@ namespace Template
             {
                 myFilter = c => c.Age >= ageToFilter;
             }
-
             else if (filter == "younger")
             {
                 myFilter = c => c.Age < ageToFilter;
             }
 
             var outputCats = cats.Where(myFilter).ToDictionary(x => x.Name, y => y.Age);
-
             var outputFormat = Console.ReadLine().Split();
 
             if (outputFormat.Length == 2)
             {
                 PrintNameAndAge(outputCats);
             }
-
             else if (outputFormat[0] == "age")
             {
                 PrintAge(outputCats);
             }
-
             else if (outputFormat[0] == "name")
             {
                 PrintName(outputCats);

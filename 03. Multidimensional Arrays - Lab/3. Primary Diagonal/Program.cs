@@ -10,10 +10,8 @@ namespace _3._Primary_Diagonal
         static void Main(string[] args)
         {
             int inputRowCol = int.Parse(Console.ReadLine());
-
             int rows = inputRowCol;
             int columns = inputRowCol;
-
             var matrix = new int[rows, columns];
             int sumDiagonal = 0;
 

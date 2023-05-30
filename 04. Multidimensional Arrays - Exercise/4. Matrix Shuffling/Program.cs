@@ -10,15 +10,14 @@ namespace _4._Matrix_Shuffling
         static void Main(string[] args)
         {
             var dimensions = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
-
             int rows = dimensions[0];
             int columns = dimensions[1];
-
             var matrix = new string[rows, columns];
 
             InitializeMatrix(matrix);
 
             string command = Console.ReadLine();
+
             while (command!="END")
             {
                 var splittedCommand = command.Split();
@@ -47,13 +46,11 @@ namespace _4._Matrix_Shuffling
                             Console.WriteLine();
                         }
                     }
-
                     else
                     {
                         Console.WriteLine("Invalid input!");
                     }
                 }
-
                 else
                 {
                     Console.WriteLine("Invalid input!");

@@ -15,7 +15,6 @@ namespace _2.__2X2_Squares_in_Matrix
 
             int rows = dimensions[0];
             int columns = dimensions[1];
-
             var matrix = new char[rows, columns];
 
             for (int row = 0; row < rows; row++)

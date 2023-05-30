@@ -11,9 +11,7 @@ namespace Functional_Programming_EX
             var names = Console.ReadLine().Split();
 
             Action<string[]> print = name=>Console.WriteLine(string.Join("\n", name));
-
             print(names);
-
         }
     }
 }

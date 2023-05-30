@@ -13,9 +13,9 @@ namespace _6._Supermarket
             var queue = new Queue<string>();
             int count = 0;
 
-            while (command!="End")
+            while (command! = "End")
             {
-                if (command=="Paid")
+                if (command == "Paid")
                 {
                     while (queue.Any())
                     {
@@ -24,13 +24,11 @@ namespace _6._Supermarket
                     }
                     count = 0;
                 }
-
                 else
                 {
                     queue.Enqueue(command);
                     count++;
                 }
-
                 command = Console.ReadLine();
             }
             Console.WriteLine($"{count} people remaining.");

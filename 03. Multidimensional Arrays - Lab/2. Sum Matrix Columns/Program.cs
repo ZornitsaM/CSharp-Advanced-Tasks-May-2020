@@ -10,10 +10,8 @@ namespace _2._Sum_Matrix_Columns
         static void Main(string[] args)
         {
             var input = Console.ReadLine().Split(", ").Select(int.Parse).ToArray();
-
             var rows = input[0];
             var columns = input[1];
-
             var matrix = new int[rows, columns];
             int sumCols = 0;
 

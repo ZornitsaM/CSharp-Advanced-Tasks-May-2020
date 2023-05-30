@@ -11,10 +11,8 @@ namespace _8._Traffic_Jam
         {
 
             int greenPassedCars = int.Parse(Console.ReadLine());
-
             var queue = new Queue<string>();
             int countPassed = 0;
-
             string command = Console.ReadLine();
 
             while (command!="end")
@@ -31,15 +29,12 @@ namespace _8._Traffic_Jam
                         }
                     }
                 }
-
                 else
                 {
                     queue.Enqueue(command);
                 }
-
                 command = Console.ReadLine();
             }
-
             Console.WriteLine($"{countPassed} cars passed the crossroads.");
         }
     }

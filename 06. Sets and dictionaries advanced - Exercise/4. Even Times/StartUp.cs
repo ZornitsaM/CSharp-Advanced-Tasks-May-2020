@@ -19,12 +19,12 @@ namespace _4._Even_Times
                 {
                     dictionary[inputNumber] = 1;
                 }
-
                 else
                 {
                     dictionary[inputNumber] += 1;
                 }
             }
+
             foreach (var item in dictionary)
             {
                 if (item.Value%2==0)

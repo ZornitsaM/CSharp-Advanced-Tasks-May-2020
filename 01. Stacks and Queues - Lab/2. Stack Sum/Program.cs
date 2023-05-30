@@ -24,7 +24,6 @@ namespace _2._Stack_Sum
                         stack.Push(inputNumber);
                     }
                 }
-
                 else if (command[0].ToLower() == "remove")
                 {
                     int inputNumber = int.Parse(command[1]);
@@ -37,7 +36,6 @@ namespace _2._Stack_Sum
                         }
                     }
                 }
-
                 command = Console.ReadLine().Split().ToArray();
             }
 

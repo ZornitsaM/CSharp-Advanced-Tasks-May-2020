@@ -8,19 +8,20 @@ namespace CarManufacturer
 {
     public class Car
     {
-        string make;
-        string model;
-        int year;
-        double fuelQuantity;
-        double fuelConsumption;
-       
         public string Model { get; set; }
+
         public string Make { get; set; }
+
         public int Year { get; set; }
+
         public double FuelQuantity { get; set; }
+
         public double FuelConsumption { get; set; }
+
         public Engine Engine { get; }
+
         public Tire[] Tires { get; }
+
         public void Drive(double distance)
         {
             double canContinue = this.FuelQuantity - (distance * this.FuelConsumption);
@@ -69,7 +70,6 @@ namespace CarManufacturer
             this.FuelQuantity = fuelQuantity;
             this.FuelConsumption = fuelConsumption;
         }
-
 
         public Car(string make, string model, int year, double fuelQuantity, double fuelConsumption,
             Engine engine, Tire[] tires)

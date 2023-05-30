@@ -23,26 +23,22 @@ namespace _6._Songs_Queue
                     {
                         Console.WriteLine("No more songs!");
                     }
-
                     else
                     {
                         queue.Dequeue();
                     }
                 }
-
                 else if (commandArray[0]=="Add")
                 {
                     string song = string.Empty;
 
                     for (int i = 1; i <= commandArray.Length; i++)
                     {
-                       
                         if (i==commandArray.Length-1)
                         {
                             song += commandArray[i];
                             break;
                         }
-
                         song += commandArray[i];
                         song += " ";
                     }
@@ -51,20 +47,16 @@ namespace _6._Songs_Queue
                     {
                         queue.Enqueue(song);
                     }
-
                     else
                     {
                         Console.WriteLine($"{song} is already contained!");
                     }
                 }
-
                 else if (command=="Show")
                 {
                     Console.WriteLine(string.Join(", ", queue));
                 }
-
                 command = Console.ReadLine();
-
             }
 
             if (queue.Count==0)

@@ -18,12 +18,10 @@ namespace _6._Parking_Lot
                 {
                     hash.Add(currentCommand[1]);
                 }
-
                 else if (currentCommand[0] == "OUT")
                 {
                     hash.Remove(currentCommand[1]);
                 }
-
                 command = Console.ReadLine();
             }
 
@@ -34,7 +32,6 @@ namespace _6._Parking_Lot
                     Console.WriteLine(item);
                 }
             }
-
             else
             {
                 Console.WriteLine("Parking Lot is Empty");

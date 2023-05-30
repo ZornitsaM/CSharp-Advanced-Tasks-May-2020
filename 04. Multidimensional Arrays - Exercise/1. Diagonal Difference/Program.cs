@@ -27,6 +27,7 @@ namespace Multidimensional_Arrays_EX
                     matrixTwo[row, col] = inputNumbersReversed[col];
                 }
             }
+
             double sumPrimaryDiagonal = 0;
             double sumSecondaryDiagonal = 0;
 

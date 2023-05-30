@@ -6,6 +6,7 @@ namespace DefiningClasses
     public class Family
     {
         private List<Person> people;
+
         public Family()
         {
             this.people = new List<Person>();
@@ -21,8 +22,5 @@ namespace DefiningClasses
             var oldestPerson = people.Where(x => x.Age >= 30).ToList();
             return oldestPerson;
         }
-
-       
-
     }
 }

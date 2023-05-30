@@ -10,7 +10,6 @@ namespace _6._Jagged_Array_Modification
         static void Main(string[] args)
         {
             int rows = int.Parse(Console.ReadLine());
-
             var matrix = new int[rows][];
 
             for (int row = 0; row < rows; row++)
@@ -18,7 +17,6 @@ namespace _6._Jagged_Array_Modification
                 var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
                 matrix[row] = input;
             }
-
 
             string command = Console.ReadLine();
 
@@ -41,8 +39,6 @@ namespace _6._Jagged_Array_Modification
                         Console.WriteLine("Invalid coordinates");
                     }
                 }
-
-
                 else if (splittedCommand[0]== "Subtract")
                 {
                     if (row >= 0 && row < rows && col >= 0 && col < matrix[row].Length)
@@ -57,6 +53,7 @@ namespace _6._Jagged_Array_Modification
                 }
                 command = Console.ReadLine();
             }
+
             foreach (var item in matrix)
             {
                 Console.WriteLine($"{string.Join(" ", item)}");

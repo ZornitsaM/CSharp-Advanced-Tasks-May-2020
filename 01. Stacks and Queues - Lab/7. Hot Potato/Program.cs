@@ -9,7 +9,6 @@ namespace _7._Hot_Potato
     {
         static void Main(string[] args)
         {
-
             var inputPlayers = Console.ReadLine().Split();
             var queue = new Queue<string>(inputPlayers);
             int count = int.Parse(Console.ReadLine());
@@ -27,7 +26,6 @@ namespace _7._Hot_Potato
                 {
                     Console.WriteLine($"Last is {removedPLayer}");
                 }
-
                 else
                 {
                     Console.WriteLine($"Removed {removedPLayer}");

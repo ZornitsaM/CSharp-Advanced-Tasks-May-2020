@@ -9,12 +9,9 @@ namespace _4._Symbol_in_Matrix
     {
         static void Main(string[] args)
         {
-
             int dimension = int.Parse(Console.ReadLine());
-
             int rows = dimension;
             int columns = dimension;
-
             var matrix = new char[rows, columns];
 
             for (int row = 0; row < rows; row++)

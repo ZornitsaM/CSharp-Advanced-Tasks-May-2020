@@ -22,7 +22,6 @@ namespace _4._Fast_Food
                 {
                     break;
                 }
-
                 else 
                 {
                     quantutyForDay -= currentOrder;
@@ -35,7 +34,6 @@ namespace _4._Fast_Food
                 Console.WriteLine(maxValueOrders);
                 Console.WriteLine("Orders complete");
             }
-
             else if (queue.Count > 0)
             {
                 Console.WriteLine(maxValueOrders);

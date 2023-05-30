@@ -11,7 +11,6 @@ namespace _2._Knights_of_Honor
             Action<string> printNames = name => Console.WriteLine($"Sir {name}");
 
             Console.ReadLine().Split().ToList().ForEach(printNames);
-
         }
     }
 }

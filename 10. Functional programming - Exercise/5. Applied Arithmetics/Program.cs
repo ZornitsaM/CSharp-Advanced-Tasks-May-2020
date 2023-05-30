@@ -23,22 +23,18 @@ namespace _5._Applied_Arithmetics
                 {
                     inputNumbers = inputNumbers.Select(addFunc).ToArray();
                 }
-
                 else if (command== "multiply")
                 {
                     inputNumbers = inputNumbers.Select(multiplyFunc).ToArray();
                 }
-
                 else if (command == "subtract")
                 {
                     inputNumbers = inputNumbers.Select(subtractFunc).ToArray();
                 }
-
                 else if (command == "print")
                 {
                     printNumbers(inputNumbers);
                 }
-
                 command = Console.ReadLine();
             }
         }

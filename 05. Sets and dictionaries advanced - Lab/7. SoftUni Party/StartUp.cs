@@ -8,7 +8,6 @@ namespace _7._SoftUni_Party
     {
         static void Main(string[] args)
         {
-
             string command = Console.ReadLine();
             var guest = new HashSet<string>();
 
@@ -18,7 +17,6 @@ namespace _7._SoftUni_Party
                 {
                     guest.Add(command);
                 }
-
                 command = Console.ReadLine();
             }
 
@@ -26,12 +24,10 @@ namespace _7._SoftUni_Party
 
             while (secondCommand != "END")
             {
-                
                 if (guest.Contains(secondCommand))
                 {
                     guest.Remove(secondCommand);
                 }
-
                 secondCommand = Console.ReadLine();
             }
             
